@@ -1,0 +1,18 @@
+body{
+background-color: #5F8CA3;
+}
+
+@font-face{
+font-family: "titre";
+    src: url('./IMPACTED.ttf');
+}
+
+#titre{
+	font-family:"titre", Arial,serif;
+    font-size: 100;
+}
+
+#err{
+	font-family:"titre", Arial,serif;
+	font-size:35;
+}
