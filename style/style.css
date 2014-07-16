@@ -1,0 +1,19 @@
+ #header
+ {
+background:url("../img/session/backbarre.gif");
+background-repeat:repeat-x;
+background-image: url("../img/session/backbarre.gif");
+background-size: initial;
+background-attachment: initial;
+background-origin: initial;
+background-clip: initial;
+background-color: initial;
+color:#FFFFFF;
+height:35px;
+text-align:center;
+position:fixed;
+top:0;
+z-index: 999999;
+width:100%;
+margin-left:-8px;
+ }
