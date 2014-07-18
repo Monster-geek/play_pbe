@@ -12,7 +12,7 @@ class api_dev{
 
     public function get_info_dev(){
 
-        include './sys/database.php';
+        include '../../sys/database.php';
         $get_msg = "SELECT  `corps_msg` ,  `date_msg` FROM  `api_dev` WHERE  `last_msg` =  '1'";
         $get_msg_row = $mysqli->query($get_msg);
         $msg_row = $get_msg_row->fetch_array();
