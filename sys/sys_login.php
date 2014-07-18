@@ -30,7 +30,7 @@ if((isset($_GET['login']))&& ($_GET['login'] = 'login')){
 		if ((strlen($id_user) <= 33) && (strlen($cookie)<=41)){
 		$s = new secu();
 		
-			$ip = (isset($_SERVER['REMOTE_ADDR']));
+			$ip = (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) ? $_SERVER['HTTP_X_FORWARDED_FOR']: $_SERVER['REMOTE_ADDR'];
 			$cookie_login=$s->cookie_hash($id_user, $ip);
 		
 			$cookDB='UPDATE `check_cookie` SET `last_cookie`=\''.$cookie_login.'\' WHERE `id_user` = \''.$id_user.'\' ';

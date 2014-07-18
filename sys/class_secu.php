@@ -58,7 +58,7 @@
 		if(!is_dir($rep))
 			mkdir($rep);
 		
-		$ip = (isset($_SERVER['REMOTE_ADDR']));
+		$ip =(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) ? $_SERVER['HTTP_X_FORWARDED_FOR']: $_SERVER['REMOTE_ADDR'];
 		$file =$rep."/".$ip;
 		
 		if(file_exists($file)){ //On vérifie que il n'y ai pas déja un token sinon on va avoir un sale conflit...
@@ -145,7 +145,7 @@
 		if(!is_dir($rep))			
 			mkdir($rep);
 		// On récupère l'ip de l'utilisateur pour trier les tentatives de connexion
-		$ip = (isset($_SERVER['REMOTE_ADDR'])); // Ici on stocke dans $ip l'adresse publique du client, même si il passe par un proxy.
+		$ip = (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) ? $_SERVER['HTTP_X_FORWARDED_FOR']: $_SERVER['REMOTE_ADDR']; // Ici on stocke dans $ip l'adresse publique du client, même si il passe par un proxy.
 		$file=$rep."/".$ip;
 		
 		if(file_exists($file)) {
