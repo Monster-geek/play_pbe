@@ -23,12 +23,13 @@
  ?>
  <br />
 <?php
-echo 'Dernier messages des developpeurs :';
- include '/api/api_dev.php';
+echo 'Dernier messages des developpeurs : <br />';
+echo "Bug sur l'API. Elle est désactivé pour le moment. ";
+ /*include '/api/api_dev.php';
  $api_dev = new api_dev();
  $msg = $api_dev->get_info_dev();
  echo $msg;
-?>
+*/?>
 <form method="post" action="session.php"  >
 <input type="submit" name="destroysess" value="Fermer la session."></form>
 <!-- ## /HEADER ##-->

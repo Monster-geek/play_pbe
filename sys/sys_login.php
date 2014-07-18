@@ -3,7 +3,7 @@ include 'class_secu.php';
 include 'database.php';
 if((isset($_GET['login']))&& ($_GET['login'] = 'login')){
 
-	if((isset($_GET['username']))&&($_GET['username'] != "")){$username = $_GET['username'];}else{die('<div class="popup_title">Erreur !</div><div id="Conteneur"> <center> Username invalide !</center></div>');}
+	if((isset($_GET['username']))&&($_GET['username'] != "")){$username = $_GET['username'];}else{die('<div class="popup_title">Erreur !</div><div id="Conteneur"> <center> Pseudo invalide !</center></div>');}
 	if((isset($_GET['pass']))&&($_GET['pass'] != "")){$pass = $_GET['pass'];}else{die('<div class="popup_title">Erreur !</div><div id="Conteneur"> <center> Mot de passe invalide !</center></div>');}
 
 	if (preg_match("/^[-+.\w]{3,16}$/i", $username)){ // dat regex pour le controle du pseudo
@@ -30,7 +30,7 @@ if((isset($_GET['login']))&& ($_GET['login'] = 'login')){
 		if ((strlen($id_user) <= 33) && (strlen($cookie)<=41)){
 		$s = new secu();
 		
-			$ip = (isset($_SERVER['REMOTE_ADDR']));
+			$ip = (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) ? $_SERVER['HTTP_X_FORWARDED_FOR']: $_SERVER['REMOTE_ADDR'];
 			$cookie_login=$s->cookie_hash($id_user, $ip);
 		
 			$cookDB='UPDATE `check_cookie` SET `last_cookie`=\''.$cookie_login.'\' WHERE `id_user` = \''.$id_user.'\' ';

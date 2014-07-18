@@ -63,7 +63,7 @@ elseif(isset($_POST['Entrer'])){
 
     $error = " ";
     $rep= "tmp";
-    $ip = (isset($_SERVER['REMOTE_ADDR']));
+    $ip = (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) ? $_SERVER['HTTP_X_FORWARDED_FOR']: $_SERVER['REMOTE_ADDR'];
     $file =$rep."/".$ip;
     if(file_exists($file)){
         $tmp = $s->read_file($file);

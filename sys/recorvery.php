@@ -29,8 +29,8 @@ if(isset($_COOKIE['IGP'])){
 		<form action="recorvery.php" method="post">
 		<li><span class="Pseudo">Pseudo</span> : <br /> <input type="text" name="pseudo" id="pseudo" ><br /></li>
 		<li><span class="pass">Email</span> : <br /> <input type="text" name="mail" id="mail" ><br /></li>
-		<li><br /><span class="bouttonCo"><span class="hover"><img src="../img/bco.png"></span></span></li>
-		<li><input type="submit" value="Send" /></li>
+		<li><input type="submit" value="Envoyer" /></li>
+		<div id="erreur"></div>
 		</form>
 		</ul>
 		</div>';
@@ -41,10 +41,13 @@ if(isset($_COOKIE['IGP'])){
 		<div class="menu_titre"><span class="connexion">Enter your informations </span></div>
 		<div class="menu">
 		<ul class="menu_gauche">
+		<form action="recorvery.php" method="post">
 		<li><span class="Pseudo">Pseudo</span> : <br /> <input type="text" name="pseudo" id="pseudo" ><br /></li>
 		<li><span class="pass">Email</span> : <br /> <input type="text" name="mail" id="mail" ><br /></li>
 		<li><br /><span class="bouttonCo"><span class="hover"><img src="../img/bco.png"></span></span></li>
+		<li><input type="submit" value="Send" /></li>
 		<div id="erreur"></div>
+		</form>
 		</ul>
 		</div>'
 		;

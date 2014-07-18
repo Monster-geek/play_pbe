@@ -8,6 +8,10 @@
 
 
 class api_dev{
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 
     public function get_info_dev(){
 
@@ -45,6 +49,4 @@ class api_dev{
 
     }
 }
-
-
 ?>
