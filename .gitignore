@@ -6,7 +6,6 @@
 *.jpg
 *.gif
 *.sql
-sys/database.php
 errlog.html
 img/test/index.php
 img/test/pouet.html
@@ -21,4 +20,5 @@ sys/play-pbe.js
 sys/tmp/1
 sys/unautorized/1
 bf.php
+users/test_api.php
 sys/database.php
