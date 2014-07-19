@@ -1,1 +1,24 @@
 *.tmp
+*.name
+*.xml
+*.iml
+*.png
+*.jpg
+*.gif
+*.sql
+errlog.html
+img/test/index.php
+img/test/pouet.html
+img/test/pouet.php
+index Old.html
+new index.html
+ppe.zip
+script_secu_ben.php
+*.ttf
+sys/login_fail/1
+sys/play-pbe.js
+sys/tmp/1
+sys/unautorized/1
+bf.php
+users/test_api.php
+sys/database.php
