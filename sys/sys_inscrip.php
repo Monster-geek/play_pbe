@@ -20,16 +20,9 @@ if ((isset ($_GET['CGU'])) && ($_GET['CGU'] == 'ok')) {$cgu = $_GET['CGU'];} els
 			
 				if (preg_match("/^[-+.\w]{2,64}@[-.\w]{2,64}\.[-.\w]{2,4}$/i", $mail)){// dat regex de controle e-mail
 					
-					// ici on va cr�er notre captcha en objet
-					//$c = new captcha();
-					//$code = $c->gen_captcha();
-					// une fois le captcha g�n�r� on va stock� le code dans un fichier s�curis� sur le serveur via notre class_secu bien sur :D
+
 					$s = new secu();
-					//$rep = "token_captcha_storage";
-					//$s->store_token_captcha($rep,$code);
-					//et par s�curit� on va d�ja hash� le pass
 					$hashed_pass = $s->pwd_hash($pass);
-					//puis on va mettre les donn�e en forme pour les pr�-stock� sur le serveur
 					$donnees = $pseudo."%".$hashed_pass."%".$mail;
 					$rep= "tmp";
 					$s->write_user_ins($rep,$donnees);
@@ -72,10 +65,11 @@ elseif(isset($_POST['Entrer'])){
     }
     else
     {
-        $error = " Fichier d'inscription expir�. Vous aller �tre redirig�...";
+        $error = " Fichier d'inscription expiré. Vous aller être redirigé...";
     }
 
     if ($error == " "){
+
         $req='SELECT `username` FROM `user` WHERE `username` = \''.$pseudo.'\'';
         $result = $mysqli->query($req);
         $row = $result->fetch_array();
@@ -86,11 +80,12 @@ elseif(isset($_POST['Entrer'])){
 
 
         if (($row['username'] == $pseudo) || ($row2['mail_user'] == $mail)){ // controle d'existance dans la BDD
-            $error = "Pseudo ou e-mail d�ja present dans la base de donn�e";
+
+            $error = "Pseudo ou e-mail déja present dans la base de données";
+            include 'error.php';
         }
         else
         {
-        // on d�clare notre nouvelle classe s�cu et on hash les donn�e
 
             $id_user = $s->hash_id_user($pseudo,$pass);
             $cookie = $s->cookie_hash($id_user,$ip);
@@ -102,11 +97,12 @@ elseif(isset($_POST['Entrer'])){
             $cookDB='INSERT INTO `check_cookie`(`id_user`,`last_cookie`) VALUES (\''.$id_user.'\',\''.$cookie.'\')';
             $mysqli->query($cookDB);
 
-            $expire = time()+3600;
-setcookie('IGP_user', $id_user , $expire , "/");
-setcookie('IGP_parse', $cookie , $expire , "/");
 
-header('Location: ../session.php');
+            $expire = time()+3600;
+            setcookie('IGP_user', $id_user , $expire , "/");
+            setcookie('IGP_parse', $cookie , $expire , "/");
+
+            header('Location: ../session.php');
 		}
 	}
 }
