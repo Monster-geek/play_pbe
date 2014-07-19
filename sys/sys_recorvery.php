@@ -53,7 +53,7 @@ if((isset($_POST['mail'])) && (isset($_POST['pseudo']))){
 			//structure url : http://play.infiniteam-gaming.org/recorvery.php?token=XXXXXX&mail_user=xxxx@xxxx.xx
 			//$token sera stocké dans la BDD. il aura une date et heure d'expiration. A 3h du mat chaque jour une CRON général de ménage videra la table.
 			$token = $s->gen_token();
-			$final_url = 'http://play.infiniteam-gaming.org/recorvery.php?token='.$token.'&mail_user='.$mail_user;
+			$final_url = 'http://pbe.infiniteam-gaming.org/sys/recorvery.php?token='.$token.'&mail_user='.$mail_user;
 			$expire_date = time()+ (2*3600);
 			
 			$rq2="INSERT INTO token_reset VALUES('".$token."','".$mail_user."','".$expire_date."')";
