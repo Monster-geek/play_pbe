@@ -8,10 +8,7 @@
 
 
 class api_dev{
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 
     public function get_info_dev(){
 
@@ -34,6 +31,7 @@ class api_dev{
     public function set_message($message,$date,$heure){
 
         include '../../sys/database.php';
+        //on passe l'ancien message à 0
 
         $update = "UPDATE  `pbeplay`.`api_dev` SET  `last_msg` =  '0' WHERE  `api_dev`.`last_msg` =1;";
         $mysqli->query($update);

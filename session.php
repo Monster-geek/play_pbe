@@ -18,7 +18,7 @@ if((isset($_COOKIE['IGP_user'])) && (isset($_COOKIE['IGP_parse']))){
 	$check_row = $check_result->fetch_array();
 	
 	$s = new secu();
-	$ip = (isset( $_SERVER['REMOTE_ADDR']));
+	$ip = (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) ? $_SERVER['HTTP_X_FORWARDED_FOR']: $_SERVER['REMOTE_ADDR'];
 	$check_hash_cookie = $s->cookie_hash($id_user,$ip);
 
 		if(($check_row['id_user'] == $id_user) && ($hash_cookie == $check_hash_cookie)){
