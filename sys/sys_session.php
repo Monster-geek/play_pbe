@@ -18,17 +18,25 @@ class sys_session {
             $this->kickout();
     }
 
+    /*
+     * Cette fonction génère une page pour confirmer le changement d'empreinte
+     */
     public function check_update_cookie(){
-        //
-        // Pop-up pour saisir le mot de passe pour valider le changement de cookie.
-        //
-        //if(motdepasse == ok){
+
+    }
+
+    public function ok_update_cookie($hash_cookie , $id_user , $mysqli){
+
+        $this->update_cookie($hash_cookie,$id_user, $mysqli );
+    }
+
+    private function update_cookie($check_hash_cookie , $id_user, $mysqli){
+
         $update_rq = "UPDATE `check_cookie` SET  `last_cookie` =  '".$check_hash_cookie."' WHERE `id_user` =  '".$id_user."'";
         $result_update = $mysqli->query($update_rq);
 
-        //else {
-        //    $this->kickout();
-        //}
+        setcookie("IGP_parse",$check_hash_cookie,time() + (24*3600), '/');
+
     }
 
 } 

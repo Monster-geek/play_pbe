@@ -14,7 +14,7 @@ if(isset($_GET['token']) && isset($_GET['mail_user']))
 <html>
 <head>
 <link rel="stylesheet" type="text/css" media="all" href="error.css" />
-<link rel="stylesheet" type="text/css" media="all" href="../style.css">
+<link rel="stylesheet" type="text/css" media="all" href="../style/style.css">
 </head>
 
 <body>

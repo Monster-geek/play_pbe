@@ -104,8 +104,25 @@
                 }
 			});
 		});
-		
-		
+
+        // A utiliser dans le main principal
+		//Gestion login
+        /*
+        $('.bouttonCo').onkeydown(function(e){
+            var username = $('#username').val();
+            var pswd = $('#pass').val();
+            e.preventDefault();
+            $('#Popup').bPopup({
+                onOpen: function(){
+                    $.post('./sys/sys_login.php',{login : 'login' , username : username , pass : pswd},function (resultat){
+                        $('#contain').html(resultat);
+                    })
+                }
+            });
+        });
+		*/
+
+
 		//nouvelle gestion inscription
 		$('.bouttonInscrip').click(function(e){
 			e.preventDefault();

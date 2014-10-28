@@ -5,10 +5,13 @@ $inc_bd = @include_once './sys/database.php';
 $inc_secu = @include_once './sys/class_secu.php';
 $inc_apidev = @include_once './users/api/api_dev.php';
 $inc_sys_session = @include_once './sys/sys_session.php';
+$inc_sys_error = @include_once './sys/sys_error.php';
 
-
-if(!($inc_bd) || !($inc_secu) || !($inc_apidev) || !($inc_sys_session)){
+if(!($inc_bd) || !($inc_secu) || !($inc_apidev) || !($inc_sys_session) || !($inc_sys_error)){
     echo 'Fatal Error !!! ';
+
+    // TODO : Faire affichage correcte pour les erreurs. Eventuellement un systeme de bug report.
+
 }
 else{
 
@@ -37,11 +40,17 @@ else{
 
             if($check_id_result != null){
                 if(($hash_cookie != $check_hash_cookie)){
-
-                    $error = "";
-                    include_once './sys/error.php';
-
+                   // Fonction à finir ! TODO :  A finir et optimisé dans sys_session.php
                    //$session->check_update_cookie();
+
+
+                    // PAS SECURE !!! TODO : A retirer quand le système sera fonctionnel. Ne pas mettre ça en prod !
+                    echo "Empreinte invalide ! <br />";
+                    echo "Mise à jour auto de l'empreinte...<br />";
+                    $session->ok_update_cookie($check_hash_cookie,$id_user,$mysqli);
+                    echo "Mise à jour effectué. Rechargez la page. <br />";
+
+
                 }
                 else
                 {
@@ -50,6 +59,9 @@ else{
                 $user_row = $user_result->fetch_array();
 
                 $username = $user_row['username'];
+
+                $api_dev = new api_dev();
+                $msg_api = $api_dev->get_info_dev();
 
                 include './users/view_session.php';
                 }

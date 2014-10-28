@@ -3,18 +3,17 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
 	<!-- LIB JQUERY -->
-	<!-- <script type="text/javascript"  src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> -->
-	<script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="/js/libs/jquery.min.js"><\/script>')</script>
+	<script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="./js/libs/jquery.min.js"><\/script>')</script>
 	
 	<!-- FEUILLE DE STYLE -->
-	<link rel="stylesheet" type="text/css" media="all" href="style.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="./style/style.css" />
 	
 	<!-- SCRIPT JS/JQUERY -->
-	<script type="text/javascript" src="/js/heureDate.js"></script>
-	<script type="text/javascript" src="/js/libs/jquery.bpopup.min.js"></script>
-	<script type="text/javascript" src="/js/main.js"></script>
-	<script type="text/javascript" src="/js/libs/jquery.cookie.js"></script>
-	<script type="text/javascript" src="/js/gestionLang.js"></script>
+	<script type="text/javascript" src="./js/heureDate.js"></script>
+	<script type="text/javascript" src="./js/libs/jquery.bpopup.min.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="./js/libs/jquery.cookie.js"></script>
+	<script type="text/javascript" src="./js/gestionLang.js"></script>
 	<!-- DIVERS -->
 	<title>Lindsey Crunch - BETA</title>
 	
@@ -25,7 +24,7 @@
 
 <!-- Definition des popup pour Jquery -->
 <div id="Popup">
-	<div class="b-close"><img src="/img/close.png" /></div>
+	<div class="b-close"><img src="./img/close.png" /></div>
 	<div id="contain"><!--<div id="loading"><img src="/img/loading.gif" />--></div></div>
 </div>
 
@@ -45,11 +44,16 @@
 	<div class="menu_titre"><span class="connexion"></span></div>
 	<div class="menu">
 	<ul class="menu_gauche">
-	<li><span class="Pseudo"></span> : <br /> <input type="text" name="login" id="username" ><br /></li>
-	<li><span class="pass"></span> : <br /> <input type="password" name="pass" id="pass" ><br /></li>
-	<li><br /><span class="bouttonCo"></span></li>
-	<div id="erreur"></div>
-	<li><span class="recorvery"></span> </li>
+        <form>
+	    <li><span class="Pseudo"></span> : <br /> <input type="text" name="login" id="username" ><br /></li>
+	    <li><span class="pass"></span> : <br /> <input type="password" name="pass" id="pass" ><br /></li>
+	    <li><br /><span class="bouttonCo"></span></li>
+        <div id="validation_hide">
+            <input type="submit" name="login" value="login"/>
+        </div>
+        </form>
+	    <div id="erreur"></div>
+	    <li><span class="recorvery"></span> </li>
 	</ul>
 	</div>
 	<br />
@@ -77,7 +81,7 @@
 	<li><div id="JqueryRegles"><span class="rules"></span></div></li>
 	<li><div id="JqueryMention"><span class="mention"></span></div></li>
 	<li><div id="Version"><span class="Patchnotes"></span></div></li>
-	<li><div id="JqueryCopy"><span class="hover">Copyright 2013 © InfiniTeam Gaming</span></div></li>
+	<li><div id="JqueryCopy"><span class="hover">Copyright 2014 © InfiniTeam Gaming</span></div></li>
 </ul>
 </div>
 

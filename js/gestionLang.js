@@ -15,6 +15,3 @@ else if(lang == 'EN'){
 		$.getScript('./js/langEN.js');
 		
 	}
-		
-else {
-}

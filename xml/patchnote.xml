@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<play_pbe> 
+	<patchnotes ver="0.02">
+		<patchnote_fr>
+			<contenus>
+				<numéro>0.02</numéro>
+				<plateforme>PBE</plateforme>
+				<changement>
+					<ajout>Nouveau systeme de patchnote </ajout>
+					<patch>Faille cookie patcher</patch>
+					<patch>Correction d'un bug avec l'API </patch>
+					<patch>Correction d'un bug dans le systeme de login</patch>
+					<patch>Correction d'un bug dans le systeme d'inscription</patch>
+					<ajout>Ajout des bases pour l'interface des session.</ajout>
+				</changement>
+				<date_release>Le 23 Octobre 2014</date_release>
+			</contenus>
+		</patchnote_fr>
+		<patchnote_en>
+			<contenus>
+				<numéro>0.02</numéro>
+				<plateforme>PBE</plateforme>
+				<changement>
+					<ajout>New patchnote system</ajout>
+					<patch>Bug fix on the API</patch>
+					<patch>Bug fix in the login system</patch>
+					<patch>Bug fix in the sign up system</patch>
+					<ajout>Add the basics for the session's interfaces.</ajout>
+				</changement>
+				<date_release>The 23th of October 2014</date_release>
+			</contenus>
+		</patchnote_en>
+	</patchnotes>
+	<patchnotes ver="0.01">
+		<patchnote_fr>
+			<contenus>
+				<numéro>0.01</numéro>
+				<plateforme>PBE</plateforme>
+				<changement>
+					<ajout>Nouveau système de connection/inscription</ajout>
+					<retrait>Disparition du captcha !</retrait>
+					<maj>Système de cookies amélioré.</maj>
+					<patch>Faille mineur patchée.</patch>
+				</changement>
+				<date_release>Le 12 mai 2014</date_release>
+			</contenus>
+		</patchnote_fr>
+		<patchnote_en>
+			<contenus>
+				<numéro>0.01</numéro>
+				<plateforme>PBE</plateforme>
+				<changement>
+					<ajout>New Sign In / Sign up system. </ajout>
+					<retrait>No more captcha ! Yay !</retrait>
+					<maj>Cookies no work correctly</maj>
+					<patch>Minor flaw patched</patch>
+				</changement>
+				<date_release>The 12th of may 2014</date_release>
+			</contenus>
+		</patchnote_en>
+	</patchnotes>
+</play_pbe>

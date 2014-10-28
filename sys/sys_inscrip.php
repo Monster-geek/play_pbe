@@ -4,13 +4,13 @@ include 'class_secu.php';
 include 'database.php';
 //include 'sys_captcha.php';
 
-if ((isset ($_GET['inscrip'])) && ($_GET['inscrip']=='ok')){  // acc�es par Jquery. G�n�re le captcha et le token.
+if ((isset ($_POST['inscrip'])) && ($_POST['inscrip']=='ok')){  // acc�es par Jquery. G�n�re le captcha et le token.
 
-if (isset ($_GET['newPseudo'])){$pseudo = $_GET['newPseudo'];} else {die('<div class="popup_title">Erreur !</div><div id="Conteneur"> <center> Pseudo non d�fini !</center></div>');} 
-if ((isset ($_GET['newPass'])) && ($_GET['newPass'] !="")) {$pass = $_GET['newPass'];} else {die('<div class="popup_title">Erreur !</div><div id="Conteneur"> <center> Mot de passe non d�fini !</center></div>');}
-if ((isset ($_GET['confirmPass'])) && ($_GET['confirmPass'] !="")) {$confirmPass = $_GET['confirmPass'];} else {die('<div class="popup_title">Erreur !</div><div id="Conteneur"> <center> Confirmez votre mot de passe !</center></div>');}
-if (isset ($_GET['mail'])) {$mail = $_GET['mail'];} else {die('<div class="popup_title">Erreur !</div><div id="Conteneur"> <center> Vous devez renseigner une adresse e-mail !</center></div>');}
-if ((isset ($_GET['CGU'])) && ($_GET['CGU'] == 'ok')) {$cgu = $_GET['CGU'];} else {die('<div class="popup_title">Erreur !</div><div id="Conteneur"> <center> Vous devez accepter les CGU !</center></div>');}
+if ((isset ($_POST['newPseudo'])) && ($_POST['newPseudo'] !="")){$pseudo = $_POST['newPseudo'];} else {die('<div class="popup_title">Erreur !</div><div id="Conteneur"> <center> Pseudo non d�fini !</center></div>');}
+if ((isset ($_POST['newPass'])) && ($_POST['newPass'] !="")) {$pass = $_POST['newPass'];} else {die('<div class="popup_title">Erreur !</div><div id="Conteneur"> <center> Mot de passe non d�fini !</center></div>');}
+if ((isset ($_POST['confirmPass'])) && ($_POST['confirmPass'] !="")) {$confirmPass = $_POST['confirmPass'];} else {die('<div class="popup_title">Erreur !</div><div id="Conteneur"> <center> Confirmez votre mot de passe !</center></div>');}
+if (isset ($_POST['mail'])) {$mail = $_POST['mail'];} else {die('<div class="popup_title">Erreur !</div><div id="Conteneur"> <center> Vous devez renseigner une adresse e-mail !</center></div>');}
+if ((isset ($_POST['CGU'])) && ($_POST['CGU'] == 'ok')) {$cgu = $_POST['CGU'];} else {die('<div class="popup_title">Erreur !</div><div id="Conteneur"> <center> Vous devez accepter les CGU !</center></div>');}
 
 
 
