@@ -1,3 +1,5 @@
+Attention ! Cette architecture est totalement obsolète et non sécurisé. Afin de permettre un developpement plus propre le projet a été rebooté sous Symfony  ici : https://github.com/Monster-geek/PlayV2
+
 Le code du PBE (Public Beta Environment) du "Play".
 ========
 
